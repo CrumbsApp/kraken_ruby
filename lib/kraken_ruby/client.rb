@@ -152,9 +152,10 @@ module Kraken
       # because the Kraken API requires every request within a given session to use a
       # monotonically increasing nonce value. This approach splits the difference.
       def nonce
-        # high_bits = (Time.now.utc.to_f * 1000000).to_i << 16
+        high_bits = (Time.now.to_f * 10000).to_i << 16
         # low_bits  = SecureRandom.random_number(2 ** 16) & 0xffff
-        (Time.now.utc.to_f * 1000000).to_i.to_s
+        # (high_bits | low_bits).to_s
+        (high_bits).to_s
       end
 
       def encode_options(opts)
