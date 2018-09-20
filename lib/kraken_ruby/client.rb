@@ -154,7 +154,7 @@ module Kraken
       def nonce
         # high_bits = (Time.now.utc.to_f * 1000000).to_i << 16
         # low_bits  = SecureRandom.random_number(2 ** 16) & 0xffff
-        (Time.now.utc.to_f * 1000000).to_s
+        (Time.now.utc.to_f * 1000000).to_i.to_s
       end
 
       def encode_options(opts)
