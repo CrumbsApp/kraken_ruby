@@ -155,7 +155,8 @@ module Kraken
         # high_bits = (Time.now.to_f * 1000).to_i << 16
         # low_bits  = SecureRandom.random_number(2 ** 16) & 0xffff
         # (high_bits | low_bits).to_s
-        (Time.now.to_f * 100000000).floor.to_s
+        # (Time.now.to_f * 100000000).floor.to_s
+        (Time.now.to_f * 1000).floor.to_s
       end
 
       def encode_options(opts)
